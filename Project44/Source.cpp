@@ -17,7 +17,7 @@ int main()
 		window.clear();
 		//window.draw();
 		window.display();
-
+		cout << endl;
 
 
 	}
