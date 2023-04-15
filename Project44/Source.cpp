@@ -2,6 +2,8 @@
 #include<iostream>
 using namespace std;
 
+
+
 // Abaidullah
 // mahnoor
 
@@ -15,12 +17,6 @@ int main()
 	{
 
 		sf::Event event;
-
-
-		window.clear();
-		//window.draw();
-		window.display();
-		cout << endl;
 
 
 	}
