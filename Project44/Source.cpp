@@ -5,7 +5,7 @@ using namespace std;
 
 
 // Abaidullah
-// mahnoor
+// Mahnoor
 
 
 
