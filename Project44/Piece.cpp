@@ -46,7 +46,6 @@ void Piece::setPosition(int x, int y)
 	this->y_cord = y;
 	Goti.setPosition(x, y);
 }
-
 int Piece::getPosition_X()
 {
 	return this->x_cord;
@@ -55,12 +54,10 @@ int Piece::getPosition_Y()
 {
 	return this->y_cord;
 }
-
 sf::CircleShape Piece::getGoti()
 {
 	return this->Goti;
 }
-
 sf::Color Piece::getColor()
 {
 	return this->Color;
