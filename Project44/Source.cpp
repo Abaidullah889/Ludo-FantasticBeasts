@@ -1,5 +1,6 @@
 #include<SFML/Graphics.hpp>
 #include<iostream>
+#include"Ludo.h"
 using namespace std;
 
 
@@ -11,13 +12,5 @@ using namespace std;
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode().getDesktopMode(), "ludo");
 
-	while(window.isOpen())
-	{
-
-		sf::Event event;
-
-
-	}
 }
