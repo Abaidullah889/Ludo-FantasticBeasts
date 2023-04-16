@@ -1,5 +1,6 @@
-#include<SFML/Graphics.hpp>
 #include<iostream>
+#include<SFML/Graphics.hpp>
+#include"Textures.h"
 #include"Ludo.h"
 using namespace std;
 
@@ -12,5 +13,8 @@ using namespace std;
 
 int main()
 {
+	Ludo l;
+	l.Play();
+
 
 }

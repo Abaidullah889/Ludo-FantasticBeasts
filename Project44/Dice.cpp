@@ -1,7 +1,9 @@
+#pragma once
 #include "Dice.h"
-#include"Textures.h"
+#include<cstdlib>
 
 #include<iostream>
+#include"Textures.h"
 #include<ctime>
 using namespace std;
 
