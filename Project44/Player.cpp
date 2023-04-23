@@ -5,12 +5,15 @@ Player::Player()
 {
 
 }
-Player::Player(int Player_n, sf::Color col, int** Gcords, int* Scords, int* Encords)
+Player::Player(int Player_n, sf::Color col, int** Gcords, int* Scords, int* Encords, int starting_ind)
 {
 	Piece* P1 = new Piece(col, 1, Player_n, Gcords[0][0], Gcords[0][1]);
 	Piece* P2 = new Piece(col, 2, Player_n, Gcords[1][0], Gcords[1][1]);
 	Piece* P3 = new Piece(col, 3, Player_n, Gcords[2][0], Gcords[2][1]);
 	Piece* P4 = new Piece(col, 4, Player_n, Gcords[3][0], Gcords[3][1]);
+
+
+	this->start_index = starting_ind;
 
 	Pieces.push_back(P1);
 	Pieces.push_back(P2);
@@ -40,7 +43,7 @@ Player::Player(int Player_n, sf::Color col, int** Gcords, int* Scords, int* Enco
 	this->Passed_Pieces = 0;
 	this->Name = "Abaid";
 	this->Can_Go_Inside = false;
-
+	this->isPassed = false;
 
 }
 void Player::Draw(sf::RenderWindow& w)

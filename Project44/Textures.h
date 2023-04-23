@@ -7,10 +7,19 @@ class Textures
 public:
 
 	static sf::Texture Board;
+	static sf::Texture Board4;
+	static sf::Texture Multi;
+	static sf::Texture win;
 	static sf::Texture Bg;
 	static sf::Texture start;
 	static sf::Texture agay;
 
+	static sf::Font name;
+	static sf::Texture credit;
+
+	static sf::Texture restart;
+	static sf::Texture b2;
+	static sf::Texture exit;
 	static sf::Texture speak;
 
 	static sf::Texture sign0;
@@ -44,6 +53,6 @@ public:
 
 
 	static sf::Texture loadTexture(string str);
-
+	static sf::Font loadFont(string str);
 };
 

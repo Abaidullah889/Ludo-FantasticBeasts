@@ -17,12 +17,14 @@ class Player
 
 public:
 
+	int start_index;
+	bool isPassed;
 	int Home_cord[2];
 	int End_cord[2];
 	int Pieces_cord[4][2];
 
 	Player();
-	Player(int Player_n, sf::Color, int** Gcords, int* Scords, int* Encords);
+	Player(int Player_n, sf::Color, int** Gcords, int* Scords, int* Encords, int start_ind);
 	void Draw(sf::RenderWindow& w);
 
 	Piece* getPiece(int i);

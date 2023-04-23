@@ -12,7 +12,17 @@ sf::Texture Textures::Player5 = Textures::loadTexture("Textures/Player5.png");
 sf::Texture Textures::Player6 = Textures::loadTexture("Textures/Player6.png");
 
 
+sf::Font Textures::name = Textures::loadFont("Textures/name.ttf");
+
+sf::Texture Textures::exit = Textures::loadTexture("Textures/exit.png");
+sf::Texture Textures::restart = Textures::loadTexture("Textures/restart.png");
+sf::Texture Textures::b2 = Textures::loadTexture("Textures/menu.png");
+
+
+sf::Texture Textures::Multi = Textures::loadTexture("Textures/multi.png");
+sf::Texture Textures::win = Textures::loadTexture("Textures/win.png");
 sf::Texture Textures::Board = Textures::loadTexture("Textures/Board3.jpg");
+sf::Texture Textures::Board4 = Textures::loadTexture("Textures/Board4.jpg");
 sf::Texture Textures::Bg = Textures::loadTexture("Textures/Bg.png");
 sf::Texture Textures::start = Textures::loadTexture("Textures/start.png");
 sf::Texture Textures::agay = Textures::loadTexture("Textures/agay.png");
@@ -34,7 +44,7 @@ sf::Texture Textures::r4 = Textures::loadTexture("Textures/r4.png");
 sf::Texture Textures::r5 = Textures::loadTexture("Textures/r5.png");
 sf::Texture Textures::r6 = Textures::loadTexture("Textures/r6.png");
 
-
+sf::Texture Textures::credit = Textures::loadTexture("Textures/credit.png");
 
 sf::Texture Textures::sign0 = Textures::loadTexture("Textures/red.png");
 sf::Texture Textures::sign1 = Textures::loadTexture("Textures/green.png");
@@ -54,4 +64,13 @@ sf::Texture Textures::loadTexture(string str)
         cout << "Error loading file\n";
     return tmp;
 }
+
+sf::Font Textures::loadFont(string str)
+{
+    sf::Font tmp;
+    if (!tmp.loadFromFile(str))
+        cout << "Error loading file\n";
+    return tmp;
+}
+
 
