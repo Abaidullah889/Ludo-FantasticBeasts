@@ -1,13 +1,14 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
+#include<SFML/Audio.hpp>
 #include"Textures.h"
 #include"Ludo.h"
 using namespace std;
 
 
 
-// Abaidullah
-// Mahnoor
+
+
 
 
 int main()
@@ -99,7 +100,7 @@ int main()
 			n = l.Play2(window);
 			break;
 		case 4:
-			n = l.Play4(window);
+			n = l.Play2b(window);
 			break;
 		case 6:
 			n = l.Play(window);
