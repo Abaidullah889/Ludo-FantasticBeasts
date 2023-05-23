@@ -1,6 +1,7 @@
 #pragma once
 #include"Ludo.h"
 #include"Dice.h"
+#include"SFML/Graphics.hpp"
 #include"Player.h"
 
 class Ludo
@@ -14,7 +15,6 @@ class Ludo
 	bool now_move;
 	int kitnay_ay;
 	vector<int>winStands;
-
 
 
 public:
@@ -37,17 +37,23 @@ public:
 	int boxestoCenter(int Turn, int goti_no, int mode);
 
 
+	////////////////////////////////////////////////////////////////////////////
 
+
+	void checkJota(int Turn, int goti_no);
+	bool isTherejota(int Turn, int goti_no, int cur_pos);
+	bool isValidMove(int Turn, int goti_no, int kitny_ay);
+
+	bool isValidMoveB(int Turn, int goti_no, int kitnay_ay);
+	bool isTherejotaB(int Turn, int goti_no, int cur_pos);
+
+	void checkKillB(int Turn, int goti_no, bool& now_move, int mode);
+
+	void checkHomeB(int Turn, int goti_no, int mode);
+
+	///////////////////////////////////////////////////////////////////////////////////////
 	bool movetowardsHome(bool move, int Turn, int& x, int& y, int goti_no);
 	bool movetowardsHome4(bool move, int Turn, int& x, int& y, int goti_no, int mode);
-
-
-
-
-
-
-
-
 
 
 	int Play(sf::RenderWindow& window);
@@ -55,7 +61,7 @@ public:
 	int Play4(sf::RenderWindow& window);
 
 
+	int Play2b(sf::RenderWindow& window);
+
 };
-
-
 

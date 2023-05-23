@@ -12,3 +12,4 @@ public:
 	void rollDice();
 	int getDiceValue();
 };
+

@@ -15,8 +15,9 @@ class Player
 	string Name;
 	bool Can_Go_Inside;
 
-public:
 
+
+public:
 	int start_index;
 	bool isPassed;
 	int Home_cord[2];
@@ -46,5 +47,4 @@ public:
 	bool getCanGoInside();
 
 };
-
 

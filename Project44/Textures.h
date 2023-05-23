@@ -54,5 +54,6 @@ public:
 
 	static sf::Texture loadTexture(string str);
 	static sf::Font loadFont(string str);
+
 };
 

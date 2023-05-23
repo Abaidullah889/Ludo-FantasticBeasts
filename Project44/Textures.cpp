@@ -1,4 +1,3 @@
-#pragma once
 #include "Textures.h"
 #include<string>
 #include<iostream>
@@ -64,7 +63,6 @@ sf::Texture Textures::loadTexture(string str)
         cout << "Error loading file\n";
     return tmp;
 }
-
 sf::Font Textures::loadFont(string str)
 {
     sf::Font tmp;
@@ -72,5 +70,3 @@ sf::Font Textures::loadFont(string str)
         cout << "Error loading file\n";
     return tmp;
 }
-
-

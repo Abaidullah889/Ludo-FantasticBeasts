@@ -1,8 +1,8 @@
-#pragma once
 #include "Ludo.h"
 #include<SFML/Graphics.hpp>
-#include<SFML/Audio.hpp>
+#include"SFML/Audio.hpp"
 #include"Piece.h"
+#include<iterator>
 #include"Textures.h"
 
 void Sleep(int n)
@@ -630,6 +630,7 @@ Ludo::Ludo(int& mode, sf::RenderWindow& window)
 		bool now_move = false;
 	}
 }
+
 bool Ludo::isValidTurn(int Turn)
 {
 	return Players[Turn].getPassedPieces() == 4;
@@ -679,16 +680,6 @@ void Ludo::changeTurn(int n)
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
 void Ludo::moveGoti(int& cur_x, int& cur_y)
 {
 	if ((cur_x >= 54 && cur_x < 146) && (cur_y == 290))
@@ -2758,8 +2749,1110 @@ void Ludo::checkHome(int Turn, int goti_no, int mode)
 	}
 }
 
+void Ludo::checkHomeB(int Turn, int goti_no, int mode)
+{
+
+	sf::Music pass;
+	pass.openFromFile("Textures/Pass_audio.ogg");
+	if (mode == 6)
+	{
+		if (Turn == 0)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 269;
+				int cur_y = 337;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 269;
+				int cur_y = 309;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 269;
+				int cur_y = 365;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 296;
+				int cur_y = 337;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+			}
+		}
+		else if (Turn == 1)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 319;
+				int cur_y = 313;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 319;
+				int cur_y = 284;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 290;
+				int cur_y = 284;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 348;
+				int cur_y = 284;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+			}
+		}
+		else if (Turn == 2)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 716;
+				int cur_y = 313;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 716;
+				int cur_y = 284;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 687;
+				int cur_y = 284;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 745;
+				int cur_y = 284;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+
+			}
+		}
+		else if (Turn == 3)
+		{
+			if (goti_no == 0)
+			{
+				pass.play();
+				Sleep(330000);
+				pass.stop();
+				int cur_x = 739;
+				int cur_y = 337;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 766;
+				int cur_y = 337;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 766;
+				int cur_y = 308;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 766;
+				int cur_y = 366;
+
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+			}
+		}
+		else if (Turn == 4)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 716;
+				int cur_y = 363;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 716;
+				int cur_y = 391;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 688;
+				int cur_y = 391;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 744;
+				int cur_y = 391;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+
+			}
+		}
+		else if (Turn == 5)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 347;
+				int cur_y = 391;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 291;
+				int cur_y = 391;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 319;
+				int cur_y = 391;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 319;
+				int cur_y = 360;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+
+			}
+
+		}
+	}
+	else if (mode == 4)
+	{
+		if (Turn == 0)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 463;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 428;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 428;
+				int cur_y = 298;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 428;
+				int cur_y = 366;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+			}
+		}
+		else if (Turn == 1)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 514;
+				int cur_y = 312;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 514;
+				int cur_y = 278;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 548;
+				int cur_y = 278;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 480;
+				int cur_y = 278;
+
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+			}
+		}
+		else if (Turn == 2)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 565;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 600;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 600;
+				int cur_y = 298;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 600;
+				int cur_y = 366;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+			}
+
+		}
+		else if (Turn == 3)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 514;
+				int cur_y = 385;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 480;
+				int cur_y = 385;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 548;
+				int cur_y = 385;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 514;
+				int cur_y = 352;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+
+			}
+
+		}
+	}
+	else if (mode == 2)
+	{
+		if (Turn == 0)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 463;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 428;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 428;
+				int cur_y = 298;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 428;
+				int cur_y = 366;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+			}
+		}
+		else if (Turn == 1)
+		{
+			if (goti_no == 0)
+			{
+				int cur_x = 565;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+
+					Sleep(33000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 337);
+			}
+			else if (goti_no == 1)
+			{
+				int cur_x = 600;
+				int cur_y = 332;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 309);
+			}
+			else if (goti_no == 2)
+			{
+				int cur_x = 600;
+				int cur_y = 298;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(269, 365);
+			}
+			else if (goti_no == 3)
+			{
+				int cur_x = 600;
+				int cur_y = 366;
+				if (Players[Turn].getPiece(goti_no)->getPosition_X() == cur_x && Players[Turn].getPiece(goti_no)->getPosition_Y() == cur_y)
+				{
+					pass.play();
+					Sleep(330000);
+					pass.stop();
+					Players[Turn].piecePassed();
+					Players[Turn].getPiece(goti_no)->setisPassed(true);
+				}
+
+				//Players[Turn].getPiece(goti_no)->setPosition(296, 337);
+			}
+
+		}
+	}
+}
 
 
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Ludo::checkJota(int Turn, int goti_no)
+{
+	bool milgya = false;
+	int i = 0;
+
+	if (checkSavePoints(Players[Turn].getPiece(goti_no)->getPosition_X(), Players[Turn].getPiece(goti_no)->getPosition_Y(), 4) == false)
+	{
+		if (Players[Turn].getPiece(goti_no)->isinJota == false)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				if (goti_no != i)
+				{
+					if (Players[Turn].getPiece(i)->pos == Players[Turn].getPiece(goti_no)->pos)
+					{
+						milgya = true;
+						Players[Turn].getPiece(i)->isinJota = true;
+						Players[Turn].getPiece(goti_no)->isinJota = true;
+						Players[Turn].getPiece(i)->jotawith = goti_no;
+						Players[Turn].getPiece(goti_no)->jotawith = i;
+					}
+				}
+			}
+		}
+		else if (Players[Turn].getPiece(goti_no)->isinJota == true)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				if (goti_no != i)
+				{
+					if (Players[Turn].getPiece(i)->pos == Players[Turn].getPiece(goti_no)->pos)
+					{
+						milgya = true;
+					}
+				}
+			}
+
+			if (milgya == false && Players[Turn].getPiece(goti_no)->isinJota == true)
+			{
+				i = Players[Turn].getPiece(goti_no)->jotawith;
+
+				Players[Turn].getPiece(i)->isinJota = false;
+				Players[Turn].getPiece(goti_no)->isinJota = false;
+				Players[Turn].getPiece(i)->jotawith = -1;
+				Players[Turn].getPiece(goti_no)->jotawith = -1;
+			}
+		}
+
+	}
+	if (checkSavePoints(Players[Turn].getPiece(goti_no)->getPosition_X(), Players[Turn].getPiece(goti_no)->getPosition_Y(), 4) == true)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (goti_no != i)
+			{
+				if (Players[Turn].getPiece(i)->pos == Players[Turn].getPiece(goti_no)->pos)
+				{
+					milgya = true;
+				}
+			}
+		}
+
+		if (milgya == false && Players[Turn].getPiece(goti_no)->isinJota == true)
+		{
+			i = Players[Turn].getPiece(goti_no)->jotawith;
+
+			Players[Turn].getPiece(i)->isinJota = false;
+			Players[Turn].getPiece(goti_no)->isinJota = false;
+			Players[Turn].getPiece(i)->jotawith = -1;
+			Players[Turn].getPiece(goti_no)->jotawith = -1;
+		}
+	}
+
+
+
+}
+
+bool Ludo::isTherejota(int Turn, int goti_no, int cur_pos)
+{
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (i == Turn && j == goti_no)
+			{
+				continue;
+			}
+			else
+			{
+				if ((Players[Turn].getPiece(j)->homegali == false))
+				{
+					if (cur_pos == Players[i].getPiece(j)->pos && Players[i].getPiece(j)->isinJota == true)
+					{
+
+						return true;
+
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+bool Ludo::isValidMove(int Turn, int goti_no, int kitny_ay)
+{
+	int n = 0;
+	n = Players[Turn].getPiece(goti_no)->pos;
+	for (int i = 0; i < kitnay_ay; i++)
+	{
+		n++;
+		if (isTherejota(Turn, goti_no, n) == true)
+		{
+			cout << "	Jota mila hai" << endl;
+			return false;
+		}
+	}
+
+
+	//cout << "Valid move hai" << endl;
+	return true;
+}
+
+
+bool Ludo::isTherejotaB(int Turn, int goti_no, int cur_pos)
+{
+	int x = Players[Turn].getPiece(goti_no)->jotawith;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (i == Turn && (j == goti_no || j == x))
+			{
+				continue;
+			}
+			else
+			{
+				if ((Players[Turn].getPiece(j)->homegali == false))
+				{
+					if (cur_pos == Players[i].getPiece(j)->pos && Players[i].getPiece(j)->isinJota == true)
+					{
+
+						return true;
+
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+	}
+}
+
+bool Ludo::isValidMoveB(int Turn, int goti_no, int kitnay_ay)
+{
+	int n = 0;
+	n = Players[Turn].getPiece(goti_no)->pos;
+
+	for (int i = 0; i < kitnay_ay; i++)
+	{
+
+		if (i != kitnay_ay - 1)
+		{
+			n++;
+			if (isTherejotaB(Turn, goti_no, n) == true)
+			{
+				cout << "	Jota mila hai" << endl;
+				return false;
+			}
+
+		}
+		else
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				if (i == goti_no || i == Players[Turn].getPiece(goti_no)->jotawith)
+				{
+					continue;
+				}
+				else
+				{
+					if (Players[Turn].getPiece(i)->homegali == false)
+					{
+						if ((Players[Turn].getPiece(i)->isinJota == true))
+						{
+							return false;
+						}
+					}
+					else
+					{
+						return true;
+					}
+				}
+			}
+		}
+	}
+
+
+	//cout << "Valid move hai" << endl;
+	return true;
+}
+
+void Ludo::checkKillB(int Turn, int goti_no, bool& now_move, int mode)
+{
+
+	sf::SoundBuffer sb;
+	sb.loadFromFile("Textures/Kill.ogg");
+	sf::Sound s;
+	s.setBuffer(sb);
+
+	sf::Music killm;
+	killm.openFromFile("Textures/Kill.ogg");
+
+	int kill_goti_no = 0;
+	int kill_playerno = 0;
+	bool kill = false;
+
+	if (mode == 6)
+	{
+		for (int j = 0; j < 6; j++)
+		{
+			if (j != Turn)
+			{
+				for (int k = 0; k < 4; k++)
+				{
+					if ((Players[Turn].getPiece(goti_no)->getPosition_X() == Players[j].getPiece(k)->getPosition_X()) && (Players[Turn].getPiece(goti_no)->getPosition_Y() == Players[j].getPiece(k)->getPosition_Y()))
+					{
+						kill_goti_no = k;
+						kill_playerno = j;
+						killm.play();
+						kill = true;
+					}
+				}
+			}
+		}
+
+
+		if (kill == true)
+		{
+
+			Players[kill_playerno].getPiece(kill_goti_no)->setPosition(Players[kill_playerno].Pieces_cord[kill_goti_no][0], Players[kill_playerno].Pieces_cord[kill_goti_no][1]);
+			Players[kill_playerno].getPiece(kill_goti_no)->setatHome(true);
+			Players[kill_playerno].pieceHomeIn();
+			now_move = false;
+		}
+	}
+	else if (mode == 4)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (j != Turn)
+			{
+				for (int k = 0; k < 4; k++)
+				{
+					if ((Players[Turn].getPiece(goti_no)->getPosition_X() == Players[j].getPiece(k)->getPosition_X()) && (Players[Turn].getPiece(goti_no)->getPosition_Y() == Players[j].getPiece(k)->getPosition_Y()))
+					{
+						kill_goti_no = k;
+						kill_playerno = j;
+						killm.play();
+						kill = true;
+					}
+				}
+			}
+		}
+
+
+		if (kill == true)
+		{
+			if (Players[kill_playerno].getPiece(kill_goti_no)->isinJota == false)
+			{
+				Players[kill_playerno].getPiece(kill_goti_no)->setPosition(Players[kill_playerno].Pieces_cord[kill_goti_no][0], Players[kill_playerno].Pieces_cord[kill_goti_no][1]);
+				Players[kill_playerno].getPiece(kill_goti_no)->setatHome(true);
+				Players[kill_playerno].pieceHomeIn();
+				now_move = false;
+			}
+			else
+			{
+				int n = Players[kill_playerno].getPiece(kill_goti_no)->jotawith;
+				Players[kill_playerno].getPiece(kill_goti_no)->setPosition(Players[kill_playerno].Pieces_cord[kill_goti_no][0], Players[kill_playerno].Pieces_cord[kill_goti_no][1]);
+				Players[kill_playerno].getPiece(n)->setPosition(Players[kill_playerno].Pieces_cord[n][0], Players[kill_playerno].Pieces_cord[n][1]);
+				Players[kill_playerno].getPiece(kill_goti_no)->isinJota = false;
+				Players[kill_playerno].getPiece(n)->isinJota = false;
+				Players[kill_playerno].getPiece(kill_goti_no)->pos = -1;
+				Players[kill_playerno].getPiece(n)->pos = -1;
+				Players[kill_playerno].getPiece(kill_goti_no)->setatHome(true);
+				Players[kill_playerno].getPiece(n)->setatHome(true);
+				Players[kill_playerno].pieceHomeIn();
+				Players[kill_playerno].pieceHomeIn();
+				now_move = false;
+			}
+
+		}
+	}
+	else if (mode == 2)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			if (j != Turn)
+			{
+				for (int k = 0; k < 4; k++)
+				{
+					if ((Players[Turn].getPiece(goti_no)->getPosition_X() == Players[j].getPiece(k)->getPosition_X()) && (Players[Turn].getPiece(goti_no)->getPosition_Y() == Players[j].getPiece(k)->getPosition_Y()))
+					{
+						kill_goti_no = k;
+						kill_playerno = j;
+						killm.play();
+						kill = true;
+					}
+				}
+			}
+		}
+
+
+		if (kill == true)
+		{
+
+			Players[kill_playerno].getPiece(kill_goti_no)->setPosition(Players[kill_playerno].Pieces_cord[kill_goti_no][0], Players[kill_playerno].Pieces_cord[kill_goti_no][1]);
+			Players[kill_playerno].getPiece(kill_goti_no)->setatHome(true);
+			Players[kill_playerno].pieceHomeIn();
+			now_move = false;
+		}
+	}
+
+
+	if (kill == true)
+	{
+		killm.play();
+		Sleep(330000);
+		killm.stop();
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -3810,11 +4903,16 @@ int Ludo::Play(sf::RenderWindow& window)
 int Ludo::Play4(sf::RenderWindow& window)
 {
 
+
+
 	sf::Music dicem;
 	dicem.openFromFile("Textures/Diceroll_audio.ogg");
 
 	sf::Music win;
 	win.openFromFile("Textures/Win.ogg");
+
+
+
 
 
 	sf::Sprite sprite;
@@ -3931,6 +5029,7 @@ int Ludo::Play4(sf::RenderWindow& window)
 						//cout << Turn << " ";
 						//roll_value = d.getDiceValue();
 						//cout << roll_value<<" ";
+						dicem.play();
 						do_animation = true;
 						if (do_animation == true)
 						{
@@ -5566,4 +6665,1439 @@ int Ludo::Play2(sf::RenderWindow& window)
 
 	return 0;
 
+}
+
+
+
+
+
+
+
+
+int Ludo::Play2b(sf::RenderWindow& window)
+{
+
+
+	sf::Music dicem;
+	dicem.openFromFile("Textures/Diceroll_audio.ogg");
+
+	sf::Music win;
+	win.openFromFile("Textures/Win.ogg");
+
+
+
+
+
+	sf::Sprite sprite;
+	int count = 0;
+	//sf::RenderWindow window(sf::VideoMode().getDesktopMode(), " Ludo");
+	vector<sf::Texture> textures;
+	textures.push_back(Textures::r1);
+	textures.push_back(Textures::r2);
+	textures.push_back(Textures::r3);
+	textures.push_back(Textures::r4);
+	textures.push_back(Textures::r5);
+	textures.push_back(Textures::r6);
+	int frameCount = textures.size();
+	int currentFrame = 0;
+	sf::Clock clock;
+	float frameTime = 1 / 14.0; // animation speed
+	float currentTime = 0;
+
+
+	bool firstTime = true;
+	bool bexit = false;
+	bool brestart = false;
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+	sf::Sprite exit;
+	sf::Sprite restart;
+	exit.setTexture(Textures::exit);
+	restart.setTexture(Textures::restart);
+	exit.setPosition(1300, 650);
+	restart.setPosition(1250, 655);
+
+
+
+	sf::Text yes;
+	yes.setFont(Textures::name);
+	yes.setString("Yes");
+	yes.setFillColor(sf::Color::Red);
+	yes.setPosition(590, 383);
+	sf::Text no;
+	no.setFont(Textures::name);
+	no.setString("No");
+	no.setPosition(740, 383);
+	no.setFillColor(sf::Color::Red);
+
+
+
+
+
+
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	int six_count = 0;
+	//int roll_value=0;
+	bool move_hogya = false;
+	bool clear_array = false;
+	bool agli_bari = false;
+	bool do_animation = false;
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	sf::Sprite board;
+	sf::Sprite Bg;
+	sf::Sprite speak;
+	speak.setTexture(Textures::speak);
+	speak.setPosition(1050, 358);
+	sf::Sprite dice_shape;
+	dice_shape.setTexture(Textures::Dice1);
+	dice_shape.setPosition(1055, 89);
+	board.setTexture(Textures::Board4);
+	Bg.setTexture(Textures::Bg);
+	sf::Event event;
+
+	while (window.isOpen())
+	{
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::Closed:
+				window.close();
+			case sf::Event::MouseButtonPressed:
+			{
+				//cout << "Pieces itny han " << Turn << " is turn kay" << Players[Turn].piecesHome() << " now move = " << now_move << "movement" << kitnay_ay << " array size" << diceValue.size() << endl;
+
+
+				sf::Vector2i position = sf::Mouse::getPosition(window);
+				if (((position.x >= 1097 && position.x <= 1133) && (position.y >= 238 && position.y <= 274)) && diceValue.size() > 0 && Players[Turn].piecesHome() < 4)
+				{
+					//cout << " Yahan par itny liya han" << diceValue[0] << endl;
+					kitnay_ay = diceValue[0];
+				}
+				if (((position.x >= 1148 && position.x <= 1184) && (position.y >= 238 && position.y <= 274)) && diceValue.size() > 1 && Players[Turn].piecesHome() < 4)
+				{
+					kitnay_ay = diceValue[1];
+				}
+				if (((position.x >= 1198 && position.x <= 1234) && (position.y >= 238 && position.y <= 274)) && diceValue.size() > 2 && Players[Turn].piecesHome() < 4)
+				{
+					kitnay_ay = diceValue[2];
+				}
+
+
+				sf::FloatRect dice_position = dice_shape.getGlobalBounds();
+				if (dice_position.contains(position.x, position.y))
+				{
+					if (now_move == false)
+					{
+
+						//cout << roll_value;
+						//d.rollDice();
+						//cout << Turn << " ";
+						//roll_value = d.getDiceValue();
+						//cout << roll_value<<" ";
+						dicem.play();
+						do_animation = true;
+						if (do_animation == true)
+						{
+							while (count < 100)
+							{
+								currentTime += clock.restart().asSeconds();
+
+								if (currentTime >= frameTime)
+								{
+									currentTime -= frameTime;
+									currentFrame++;
+									if (currentFrame >= frameCount) {
+										currentFrame = 0;
+									}
+									sprite.setTexture(textures[currentFrame]);
+									sprite.setPosition(1055, 89);
+								}
+								count++;
+								if (count == 100)
+								{
+									do_animation = false;
+								}
+								window.clear();
+								window.draw(Bg);
+								window.draw(board);
+								for (int i = 0; i < 4; i++)
+								{
+
+									Players[i].Draw(window);
+
+								}
+								window.draw(speak);
+
+								if (six_count >= 0)
+								{
+									if (six_count == 3)
+									{
+										d.Draw(window, diceValue);
+										diceValue.clear();
+										changeTurn(6);
+										six_count = 0;
+										firstTime = true;
+									}
+									else
+									{
+										d.Draw(window, diceValue);
+										firstTime = true;
+									}
+								}
+
+
+								if (Turn == 0)
+								{
+									sf::Sprite red;
+									red.setTexture(Textures::sign0);
+									red.scale(1, 1);
+									red.setPosition(1088, 371);
+									window.draw(red);
+								}
+								if (Turn == 1)
+								{
+									sf::Sprite green;
+									green.setTexture(Textures::sign1);
+									green.scale(1, 1);
+									green.setPosition(1088, 371);
+									window.draw(green);
+								}
+								if (Turn == 2)
+								{
+									sf::Sprite yellow;
+									yellow.setTexture(Textures::sign3);
+									yellow.scale(1, 1);
+									yellow.setPosition(1088, 371);
+									window.draw(yellow);
+								}
+								if (Turn == 3)
+								{
+									sf::Sprite Blue;
+									Blue.setTexture(Textures::sign5);
+									Blue.scale(1, 1);
+									Blue.setPosition(1088, 371);
+									window.draw(Blue);
+								}
+
+
+								window.draw(sprite);
+								window.draw(exit);
+								window.draw(restart);
+								window.display();
+							}
+						}
+						dicem.stop();
+						count = 0;
+
+						diceValue.push_back(roll_value);
+						if (roll_value == 6)
+						{
+							six_count++;
+							firstTime = false;
+							if (six_count == 3)
+							{
+								clear_array = true;
+							}
+						}
+						else if (Players[Turn].piecesHome() == 4 && find(diceValue.begin(), diceValue.end(), 6) == diceValue.end())
+						{
+							agli_bari = true;
+							//diceValue.clear();
+							//cout << Turn;
+							changeTurn(4);
+						}
+						else
+						{
+							now_move = true;
+
+							six_count = 0;
+						}
+					}
+				}
+				if (now_move == true)
+				{
+					int goti_no = -1;
+					if (Players[Turn].checkGoti(position.x, position.y, goti_no) == true)
+					{
+
+						if (Players[Turn].getPiece(goti_no)->getatHome() == true && find(diceValue.begin(), diceValue.end(), 6) != diceValue.end())
+						{
+							int cordx = Players[Turn].Home_cord[0];
+							int cordy = Players[Turn].Home_cord[1];
+							Players[Turn].pieceHomeOut();
+							Players[Turn].getPiece(goti_no)->setatHome(false);
+							Players[Turn].getPiece(goti_no)->pos = Players[Turn].start_index;
+							//Players[Turn].pieceHomeOut();
+
+							std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), 6);
+							if (position != diceValue.end())
+							{
+								diceValue.erase(position);
+							}
+							Players[Turn].getPiece(goti_no)->setPosition(cordx, cordy);
+						}
+						else if (Players[Turn].getPiece(goti_no)->getatHome() == false)
+						{
+
+							//cout << ((isValidMoveB(Turn, goti_no, kitnay_ay / 2) == true ? "valid move" : "not valid move") ) << endl;
+							if ((kitnay_ay % 2 == 0) && Players[Turn].getPiece(goti_no)->isinJota == true)
+							{
+								if (isValidMoveB(Turn, goti_no, kitnay_ay / 2))
+								{
+									cout << "Andar A gya hai " << endl;
+									if (canGoHome(Turn, kitnay_ay / 2, goti_no, 4) == false)
+									{
+										for (int i = 0; i < kitnay_ay / 2; i++)
+										{
+											int tempx = Players[Turn].getPiece(goti_no)->getPosition_X();
+											int tempy = Players[Turn].getPiece(goti_no)->getPosition_Y();
+											moveGoti4(Turn, goti_no, tempx, tempy);
+											Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+											Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->setPosition(tempx, tempy);
+											window.clear();
+											window.draw(Bg);
+											window.draw(board);
+											for (int i = 0; i < 4; i++)
+											{
+
+												Players[i].Draw(window);
+
+											}
+											window.draw(speak);
+
+											if (six_count >= 0)
+											{
+												if (six_count == 3)
+												{
+													d.Draw(window, diceValue);
+													diceValue.clear();
+													changeTurn(6);
+													six_count = 0;
+													firstTime = true;
+												}
+												else
+												{
+													d.Draw(window, diceValue);
+													firstTime = true;
+												}
+											}
+											if (Turn == 0)
+											{
+												sf::Sprite red;
+												red.setTexture(Textures::sign0);
+												red.scale(1, 1);
+												red.setPosition(1088, 371);
+												window.draw(red);
+											}
+											if (Turn == 1)
+											{
+												sf::Sprite green;
+												green.setTexture(Textures::sign1);
+												green.scale(1, 1);
+												green.setPosition(1088, 371);
+												window.draw(green);
+											}
+											if (Turn == 2)
+											{
+												sf::Sprite yellow;
+												yellow.setTexture(Textures::sign3);
+												yellow.scale(1, 1);
+												yellow.setPosition(1088, 371);
+												window.draw(yellow);
+											}
+											if (Turn == 3)
+											{
+												sf::Sprite Blue;
+												Blue.setTexture(Textures::sign5);
+												Blue.scale(1, 1);
+												Blue.setPosition(1088, 371);
+												window.draw(Blue);
+											}
+
+											window.draw(dice_shape);
+											//window.draw(sprite);
+											window.draw(exit);
+											window.draw(restart);
+											window.display();
+											Sleep(50000);
+										}
+
+										for (int i = 0; i < kitnay_ay / 2; i++)
+										{
+											if (Players[Turn].getPiece(goti_no)->pos == 51)
+											{
+												Players[Turn].getPiece(goti_no)->pos = 0;
+											}
+											else
+											{
+												Players[Turn].getPiece(goti_no)->pos++;
+											}
+										}
+
+										for (int i = 0; i < kitnay_ay / 2; i++)
+										{
+											if (Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->pos == 51)
+											{
+												Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->pos = 0;
+											}
+											else
+											{
+												Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->pos++;
+											}
+										}
+
+
+										if (Players[Turn].getPiece(goti_no)->pos != Players[Turn].start_index)
+										{
+
+											checkJota(Turn, goti_no);
+										}
+
+										if (checkSavePoints(Players[Turn].getPiece(goti_no)->getPosition_X(), Players[Turn].getPiece(goti_no)->getPosition_Y(), 4) == false)
+										{
+											checkKillB(Turn, goti_no, now_move, 4);
+
+										}
+										std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), kitnay_ay);
+										if (position != diceValue.end()) {
+											diceValue.erase(position);
+										}
+										kitnay_ay = 0;
+
+										cout << "Player " << Turn << "ki Goti 0 " << ((Players[Turn].getPiece(0)->isinJota == true) ? "jotay main hai" : "jotay main nhi hai") << " is kay sath " << Players[Turn].getPiece(0)->jotawith << " ya pos hai " << Players[Turn].getPiece(0)->pos << endl;
+										cout << "Player " << Turn << "ki Goti 1 " << ((Players[Turn].getPiece(1)->isinJota == true) ? "jotay main hai" : "jotay main nhi hai") << " is kay sath " << Players[Turn].getPiece(1)->jotawith << " ya pos hai " << Players[Turn].getPiece(1)->pos << endl;
+										cout << "Player " << Turn << "ki Goti 2 " << ((Players[Turn].getPiece(2)->isinJota == true) ? "jotay main hai" : "jotay main nhi hai") << " is kay sath " << Players[Turn].getPiece(2)->jotawith << " ya pos hai " << Players[Turn].getPiece(2)->pos << endl;
+										cout << "Player " << Turn << "ki Goti 3 " << ((Players[Turn].getPiece(3)->isinJota == true) ? "jotay main hai" : "jotay main nhi hai") << " is kay sath " << Players[Turn].getPiece(3)->jotawith << " ya pos hai " << Players[Turn].getPiece(3)->pos << endl;
+
+										cout << endl << endl << endl;
+
+
+									}
+									else
+									{
+										int itny_rah_gay = 0;
+										int x = Players[Turn].getPiece(goti_no)->jotawith;
+										Piece* tmp = new Piece(Players[Turn].getPiece(goti_no)->getColor(), goti_no, Turn, (Players[Turn].getPiece(goti_no))->getPosition_X(), (Players[Turn].getPiece(goti_no)->getPosition_Y()));
+										Piece* tmp1 = new Piece(Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->getColor(), Players[Turn].getPiece(goti_no)->jotawith, Turn, (Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith))->getPosition_X(), (Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->getPosition_Y()));
+										int tempx = Players[Turn].getPiece(goti_no)->getPosition_X();
+										int tempy = Players[Turn].getPiece(goti_no)->getPosition_Y();
+										int temp1x = Players[Turn].getPiece(x)->getPosition_X();
+										int temp1y = Players[Turn].getPiece(x)->getPosition_Y();
+
+										//int count = boxestoCenter(Turn, goti_no);
+										for (int i = 0; i < kitnay_ay / 2; i++)
+										{
+											itny_rah_gay = kitnay_ay - (i + 1);
+											if (movetowardsHome4(false, Turn, tempx, tempy, goti_no, 4) == true)
+											{
+												cout << "boxes to home are = " << boxestoCenter(Turn, goti_no, 4) << endl;
+												if (boxestoCenter(Turn, goti_no, 4) >= (kitnay_ay / 2))
+												{
+													movetowardsHome4(true, Turn, tempx, tempy, goti_no, 4);
+													movetowardsHome4(true, Turn, temp1x, temp1y, x, 4);
+													//movetowardsHome4(true, Turn, tempx, tempy, Players[Turn].getPiece(goti_no)->jotawith, 4);
+													Players[Turn].getPiece(goti_no)->homegali = true;
+													Players[Turn].getPiece(x)->homegali = true;
+													Players[Turn].getPiece(goti_no)->pos = -1;
+													Players[Turn].getPiece(x)->pos = -1;
+													move_hogya = true;
+													tmp->setPosition(tempx, tempy);
+													tmp1->setPosition(temp1x, temp1y);
+													window.clear();
+													window.draw(Bg);
+													window.draw(board);
+													for (int i = 0; i < 4; i++)
+													{
+														if (i == Turn)
+														{
+															for (int i = 0; i < 4; i++)
+															{
+																if (goti_no == i)
+																{
+																	window.draw(tmp->Goti);
+																}
+																else if (i == Players[Turn].getPiece(goti_no)->jotawith)
+																{
+																	window.draw(tmp1->Goti);
+																}
+																else if (i != goti_no && i != Players[Turn].getPiece(goti_no)->jotawith)
+																{
+																	window.draw(Players[Turn].getPiece(i)->Goti);
+																}
+															}
+														}
+														else
+														{
+															Players[i].Draw(window);
+														}
+
+													}
+													window.draw(speak);
+
+													if (six_count >= 0)
+													{
+														if (six_count == 3)
+														{
+															d.Draw(window, diceValue);
+															diceValue.clear();
+															changeTurn(6);
+															six_count = 0;
+															firstTime = true;
+														}
+														else
+														{
+															d.Draw(window, diceValue);
+															firstTime = true;
+														}
+													}
+
+													if (Turn == 0)
+													{
+														sf::Sprite red;
+														red.setTexture(Textures::sign0);
+														red.scale(1, 1);
+														red.setPosition(1088, 371);
+														window.draw(red);
+													}
+													if (Turn == 1)
+													{
+														sf::Sprite green;
+														green.setTexture(Textures::sign1);
+														green.scale(1, 1);
+														green.setPosition(1088, 371);
+														window.draw(green);
+													}
+													if (Turn == 2)
+													{
+														sf::Sprite yellow;
+														yellow.setTexture(Textures::sign3);
+														yellow.scale(1, 1);
+														yellow.setPosition(1088, 371);
+														window.draw(yellow);
+													}
+													if (Turn == 3)
+													{
+														sf::Sprite Blue;
+														Blue.setTexture(Textures::sign5);
+														Blue.scale(1, 1);
+														Blue.setPosition(1088, 371);
+														window.draw(Blue);
+													}
+
+													window.draw(dice_shape);
+													//window.draw(sprite);
+													window.draw(exit);
+													window.draw(restart);
+													window.display();
+													Sleep(50000);
+												}
+											}
+											else
+											{
+												/*int tempx = Players[Turn].getPiece(goti_no)->getPosition_X();
+												int tempy = Players[Turn].getPiece(goti_no)->getPosition_Y();*/
+												moveGoti4(Turn, goti_no, tempx, tempy);
+
+												if (Players[Turn].getPiece(goti_no)->pos == 51)
+												{
+													Players[Turn].getPiece(goti_no)->pos = 0;
+												}
+												else
+												{
+													Players[Turn].getPiece(goti_no)->pos++;
+												}
+
+												if (Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->pos == 51)
+												{
+													Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->pos = 0;
+												}
+												else
+												{
+													Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->pos++;
+												}
+
+
+												Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+												Players[Turn].getPiece(Players[Turn].getPiece(goti_no)->jotawith)->setPosition(tempx, tempy);
+												window.clear();
+												window.draw(Bg);
+												window.draw(board);
+												for (int i = 0; i < 4; i++)
+												{
+
+													Players[i].Draw(window);
+
+												}
+												window.draw(speak);
+
+												if (six_count >= 0)
+												{
+													if (six_count == 3)
+													{
+														d.Draw(window, diceValue);
+														diceValue.clear();
+														changeTurn(6);
+														six_count = 0;
+														firstTime = true;
+													}
+													else
+													{
+														d.Draw(window, diceValue);
+														firstTime = true;
+													}
+												}
+
+
+												if (Turn == 0)
+												{
+													sf::Sprite red;
+													red.setTexture(Textures::sign0);
+													red.scale(1, 1);
+													red.setPosition(1088, 371);
+													window.draw(red);
+												}
+												if (Turn == 1)
+												{
+													sf::Sprite green;
+													green.setTexture(Textures::sign1);
+													green.scale(1, 1);
+													green.setPosition(1088, 371);
+													window.draw(green);
+												}
+												if (Turn == 2)
+												{
+													sf::Sprite yellow;
+													yellow.setTexture(Textures::sign3);
+													yellow.scale(1, 1);
+													yellow.setPosition(1088, 371);
+													window.draw(yellow);
+												}
+												if (Turn == 3)
+												{
+													sf::Sprite Blue;
+													Blue.setTexture(Textures::sign5);
+													Blue.scale(1, 1);
+													Blue.setPosition(1088, 371);
+													window.draw(Blue);
+												}
+
+												window.draw(dice_shape);
+												//window.draw(sprite);
+												window.draw(exit);
+												window.draw(restart);
+												window.display();
+
+												Sleep(50000);
+												//Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+
+											}
+
+										}
+										if (Players[Turn].getPiece(goti_no)->pos != Players[Turn].start_index)
+										{
+											checkJota(Turn, goti_no);
+										}
+										if (checkSavePoints(Players[Turn].getPiece(goti_no)->getPosition_X(), Players[Turn].getPiece(goti_no)->getPosition_Y(), 4) == false)
+										{
+											checkKillB(Turn, goti_no, now_move, 4);
+
+										}
+
+										if (move_hogya == false)
+										{
+											std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), kitnay_ay);
+											if (position != diceValue.end()) {
+												diceValue.erase(position);
+											}
+											kitnay_ay = 0;
+										}
+
+										if (move_hogya == true)
+										{
+											cout << endl << Players[Turn].getPiece(goti_no)->getPosition_X() << "," << Players[Turn].getPiece(goti_no)->getPosition_Y();
+											Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+											Players[Turn].getPiece(x)->setPosition(temp1x, temp1y);
+
+											std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), kitnay_ay);
+											if (position != diceValue.end()) {
+												diceValue.erase(position);
+											}
+											kitnay_ay = 0;
+										}
+
+										checkHome(Turn, goti_no, 4); /// dont change its position
+										checkHome(Turn, Players[Turn].getPiece(goti_no)->jotawith, 4);
+									}
+								}
+
+							}
+							else
+							{
+								if (kitnay_ay > 0 && isValidMove(Turn, goti_no, kitnay_ay) == true)
+								{
+									if (canGoHome(Turn, kitnay_ay, goti_no, 4) == false)
+									{
+										for (int i = 0; i < kitnay_ay; i++)
+										{
+											int tempx = Players[Turn].getPiece(goti_no)->getPosition_X();
+											int tempy = Players[Turn].getPiece(goti_no)->getPosition_Y();
+											moveGoti4(Turn, goti_no, tempx, tempy);
+											Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+											window.clear();
+											window.draw(Bg);
+											window.draw(board);
+											for (int i = 0; i < 4; i++)
+											{
+
+												Players[i].Draw(window);
+
+											}
+											window.draw(speak);
+
+											if (six_count >= 0)
+											{
+												if (six_count == 3)
+												{
+													d.Draw(window, diceValue);
+													diceValue.clear();
+													changeTurn(6);
+													six_count = 0;
+													firstTime = true;
+												}
+												else
+												{
+													d.Draw(window, diceValue);
+													firstTime = true;
+												}
+											}
+
+
+											if (Turn == 0)
+											{
+												sf::Sprite red;
+												red.setTexture(Textures::sign0);
+												red.scale(1, 1);
+												red.setPosition(1088, 371);
+												window.draw(red);
+											}
+											if (Turn == 1)
+											{
+												sf::Sprite green;
+												green.setTexture(Textures::sign1);
+												green.scale(1, 1);
+												green.setPosition(1088, 371);
+												window.draw(green);
+											}
+											if (Turn == 2)
+											{
+												sf::Sprite yellow;
+												yellow.setTexture(Textures::sign3);
+												yellow.scale(1, 1);
+												yellow.setPosition(1088, 371);
+												window.draw(yellow);
+											}
+											if (Turn == 3)
+											{
+												sf::Sprite Blue;
+												Blue.setTexture(Textures::sign5);
+												Blue.scale(1, 1);
+												Blue.setPosition(1088, 371);
+												window.draw(Blue);
+											}
+
+											window.draw(dice_shape);
+											//window.draw(sprite);
+											window.draw(exit);
+											window.draw(restart);
+											window.display();
+											Sleep(50000);
+										}
+
+										for (int i = 0; i < kitnay_ay; i++)
+										{
+											if (Players[Turn].getPiece(goti_no)->pos == 51)
+											{
+												Players[Turn].getPiece(goti_no)->pos = 0;
+											}
+											else
+											{
+												Players[Turn].getPiece(goti_no)->pos++;
+											}
+										}
+
+										if (Players[Turn].getPiece(goti_no)->pos != Players[Turn].start_index)
+										{
+											checkJota(Turn, goti_no);
+										}
+
+										if (checkSavePoints(Players[Turn].getPiece(goti_no)->getPosition_X(), Players[Turn].getPiece(goti_no)->getPosition_Y(), 4) == false)
+										{
+											checkKill(Turn, goti_no, now_move, 4);
+
+										}
+										std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), kitnay_ay);
+										if (position != diceValue.end()) {
+											diceValue.erase(position);
+										}
+										kitnay_ay = 0;
+									}
+									else
+									{
+										int itny_rah_gay = 0;
+										Piece* tmp = new Piece(Players[Turn].getPiece(goti_no)->getColor(), goti_no, Turn, (Players[Turn].getPiece(goti_no))->getPosition_X(), (Players[Turn].getPiece(goti_no)->getPosition_Y()));
+										int tempx = Players[Turn].getPiece(goti_no)->getPosition_X();
+										int tempy = Players[Turn].getPiece(goti_no)->getPosition_Y();
+										//int count = boxestoCenter(Turn, goti_no);
+										for (int i = 0; i < kitnay_ay; i++)
+										{
+											itny_rah_gay = kitnay_ay - (i + 1);
+											if (movetowardsHome4(false, Turn, tempx, tempy, goti_no, 4) == true)
+											{
+												cout << "boxes to home are = " << boxestoCenter(Turn, goti_no, 4) << endl;
+												if (boxestoCenter(Turn, goti_no, 4) >= kitnay_ay)
+												{
+													movetowardsHome4(true, Turn, tempx, tempy, goti_no, 4);
+													move_hogya = true;
+													tmp->setPosition(tempx, tempy);
+													window.clear();
+													window.draw(Bg);
+													window.draw(board);
+													for (int i = 0; i < 4; i++)
+													{
+														if (i == Turn)
+														{
+															for (int i = 0; i < 4; i++)
+															{
+																if (goti_no == i)
+																{
+																	window.draw(tmp->Goti);
+																}
+																else
+																{
+																	window.draw(Players[Turn].getPiece(i)->Goti);
+																}
+															}
+														}
+														else
+														{
+															Players[i].Draw(window);
+														}
+
+													}
+													window.draw(speak);
+
+													if (six_count >= 0)
+													{
+														if (six_count == 3)
+														{
+															d.Draw(window, diceValue);
+															diceValue.clear();
+															changeTurn(6);
+															six_count = 0;
+															firstTime = true;
+														}
+														else
+														{
+															d.Draw(window, diceValue);
+															firstTime = true;
+														}
+													}
+
+													if (Turn == 0)
+													{
+														sf::Sprite red;
+														red.setTexture(Textures::sign0);
+														red.scale(1, 1);
+														red.setPosition(1088, 371);
+														window.draw(red);
+													}
+													if (Turn == 1)
+													{
+														sf::Sprite green;
+														green.setTexture(Textures::sign1);
+														green.scale(1, 1);
+														green.setPosition(1088, 371);
+														window.draw(green);
+													}
+													if (Turn == 2)
+													{
+														sf::Sprite yellow;
+														yellow.setTexture(Textures::sign3);
+														yellow.scale(1, 1);
+														yellow.setPosition(1088, 371);
+														window.draw(yellow);
+													}
+													if (Turn == 3)
+													{
+														sf::Sprite Blue;
+														Blue.setTexture(Textures::sign5);
+														Blue.scale(1, 1);
+														Blue.setPosition(1088, 371);
+														window.draw(Blue);
+													}
+
+													window.draw(dice_shape);
+													//window.draw(sprite);
+													window.draw(exit);
+													window.draw(restart);
+													window.display();
+													Sleep(50000);
+												}
+											}
+											else
+											{
+												/*int tempx = Players[Turn].getPiece(goti_no)->getPosition_X();
+												int tempy = Players[Turn].getPiece(goti_no)->getPosition_Y();*/
+												moveGoti4(Turn, goti_no, tempx, tempy);
+
+												if (Players[Turn].getPiece(goti_no)->pos == 51)
+												{
+													Players[Turn].getPiece(goti_no)->pos = 0;
+												}
+												else
+												{
+													Players[Turn].getPiece(goti_no)->pos++;
+												}
+
+												Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+												window.clear();
+												window.draw(Bg);
+												window.draw(board);
+												for (int i = 0; i < 4; i++)
+												{
+
+													Players[i].Draw(window);
+
+												}
+												window.draw(speak);
+
+												if (six_count >= 0)
+												{
+													if (six_count == 3)
+													{
+														d.Draw(window, diceValue);
+														diceValue.clear();
+														changeTurn(6);
+														six_count = 0;
+														firstTime = true;
+													}
+													else
+													{
+														d.Draw(window, diceValue);
+														firstTime = true;
+													}
+												}
+
+
+												if (Turn == 0)
+												{
+													sf::Sprite red;
+													red.setTexture(Textures::sign0);
+													red.scale(1, 1);
+													red.setPosition(1088, 371);
+													window.draw(red);
+												}
+												if (Turn == 1)
+												{
+													sf::Sprite green;
+													green.setTexture(Textures::sign1);
+													green.scale(1, 1);
+													green.setPosition(1088, 371);
+													window.draw(green);
+												}
+												if (Turn == 2)
+												{
+													sf::Sprite yellow;
+													yellow.setTexture(Textures::sign3);
+													yellow.scale(1, 1);
+													yellow.setPosition(1088, 371);
+													window.draw(yellow);
+												}
+												if (Turn == 3)
+												{
+													sf::Sprite Blue;
+													Blue.setTexture(Textures::sign5);
+													Blue.scale(1, 1);
+													Blue.setPosition(1088, 371);
+													window.draw(Blue);
+												}
+
+												window.draw(dice_shape);
+												//window.draw(sprite);
+												window.display();
+												window.draw(exit);
+												window.draw(restart);
+												Sleep(50000);
+												//Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+
+											}
+
+										}
+										if (Players[Turn].getPiece(goti_no)->pos != Players[Turn].start_index)
+										{
+											checkJota(Turn, goti_no);
+										}
+										if (checkSavePoints(Players[Turn].getPiece(goti_no)->getPosition_X(), Players[Turn].getPiece(goti_no)->getPosition_Y(), 4) == false)
+										{
+											checkKill(Turn, goti_no, now_move, 4);
+
+										}
+
+										if (move_hogya == false)
+										{
+											std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), kitnay_ay);
+											if (position != diceValue.end()) {
+												diceValue.erase(position);
+											}
+											kitnay_ay = 0;
+										}
+
+										if (move_hogya == true)
+										{
+											cout << endl << Players[Turn].getPiece(goti_no)->getPosition_X() << "," << Players[Turn].getPiece(goti_no)->getPosition_Y();
+											Players[Turn].getPiece(goti_no)->setPosition(tempx, tempy);
+											std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), kitnay_ay);
+											if (position != diceValue.end()) {
+												diceValue.erase(position);
+											}
+											kitnay_ay = 0;
+										}
+
+										checkHome(Turn, goti_no, 4); /// dont change its position
+									}
+								}
+								else
+								{
+									int movement = 0;
+									bool isremove = true;
+
+
+									for (int i = 0; i < diceValue.size(); i++)
+									{
+										movement = diceValue[i];
+										if (movement == 6 && Players[Turn].piecesHome() > 0)
+										{
+											isremove = false;
+											continue;
+										}
+										for (int j = 0; j < 4; j++)
+										{
+											if (j != goti_no)
+											{
+												if (movement == 6 && Players[Turn].piecesHome() == 0 && isValidMove(Turn, j, movement) == true)
+												{
+													isremove = false;
+												}
+												else if (movement != 6 && Players[Turn].getPiece(j)->getatHome() != true)
+												{
+													if (isValidMove(Turn, j, movement) == true)
+													{
+														isremove = false;
+													}
+												}
+											}
+										}
+										if (isremove == true)
+										{
+											std::vector<int>::iterator position = std::find(diceValue.begin(), diceValue.end(), movement);
+											if (position != diceValue.end())
+											{
+												diceValue.erase(position);
+											}
+										}
+									}
+
+
+
+									/*for (int i = 0; i < 4; i++)
+									{
+										if (i != goti_no)
+										{
+											if (isValidMove(Turn, i, kitnay_ay) ==true)
+											{
+												continue;
+											}
+											else
+											{
+												six_count = 0;
+												changeTurn(4);
+												now_move = false;
+												move_hogya = false;
+											}
+										}
+									}*/
+
+
+								}
+							}
+
+						}
+
+
+					}
+					else
+					{
+
+					}
+
+					if (Players[Turn].getPassedPieces() == 4)
+					{
+						Players[Turn].isPassed = true;
+						winStands.push_back(Turn);
+						nop--;
+					}
+
+
+
+					if (diceValue.size() == 0 && now_move == true)
+					{
+						//cout << Turn << " ";
+						six_count = 0;
+						changeTurn(4);
+						now_move = false;
+						move_hogya = false;
+					}
+
+
+				}
+
+				sf::FloatRect res_pos = restart.getGlobalBounds();
+				sf::FloatRect exit_pos = exit.getGlobalBounds();
+				sf::FloatRect yes_pos = yes.getGlobalBounds();
+				sf::FloatRect no_pos = no.getGlobalBounds();
+				if (exit_pos.contains(position.x, position.y))
+				{
+					bexit = true;
+
+				}
+				if (res_pos.contains(position.x, position.y))
+				{
+					brestart = true;
+				}
+				if (yes_pos.contains(position.x, position.y) && (bexit == true || brestart == true))
+				{
+					if (bexit == true)
+					{
+						return 2;
+					}
+					if (bexit == false)
+					{
+						return 1;
+					}
+
+
+				}
+				if (no_pos.contains(position.x, position.y) && (bexit == true || brestart == true))
+				{
+					bexit = false;
+					brestart = false;
+				}
+
+				break;
+
+
+			}
+			case sf::Event::KeyPressed:
+			{
+				if (event.key.code == sf::Keyboard::Num6)
+				{
+					roll_value = 6;
+
+				}
+				else if (event.key.code == sf::Keyboard::Num5)
+				{
+					roll_value = 5;
+				}
+				else if (event.key.code == sf::Keyboard::Num4)
+				{
+					roll_value = 4;
+
+				}
+				else if (event.key.code == sf::Keyboard::Num3)
+				{
+					roll_value = 3;
+				}
+				else if (event.key.code == sf::Keyboard::Num2)
+				{
+					roll_value = 2;
+
+				}
+				else if (event.key.code == sf::Keyboard::Num1)
+				{
+					roll_value = 1;
+				}
+				break;
+			}
+
+			}
+		}
+
+		if (nop == 1)
+		{
+			break;
+		}
+
+
+		window.clear();
+		window.draw(Bg);
+		window.draw(board);
+		for (int i = 0; i < 4; i++)
+		{
+
+			Players[i].Draw(window);
+
+
+		}
+		Players[Turn].Draw(window);
+		window.draw(speak);
+
+
+		if (do_animation == false)
+		{
+			count = 0;
+			window.draw(dice_shape);
+		}
+		if (six_count == 0)
+		{
+			d.Draw(window, diceValue);
+		}
+		if (six_count >= 0)
+		{
+			if (six_count == 3)
+			{
+				d.Draw(window, diceValue);
+				diceValue.clear();
+				changeTurn(4);
+				six_count = 0;
+				firstTime = true;
+			}
+			else
+			{
+				d.Draw(window, diceValue);
+				firstTime = true;
+			}
+		}
+
+		if (Turn == 0)
+		{
+			sf::Sprite red;
+			red.setTexture(Textures::sign0);
+			red.scale(1, 1);
+			red.setPosition(1088, 371);
+			window.draw(red);
+		}
+		if (Turn == 1)
+		{
+			sf::Sprite green;
+			green.setTexture(Textures::sign1);
+			green.scale(1, 1);
+			green.setPosition(1088, 371);
+			window.draw(green);
+		}
+		if (Turn == 2)
+		{
+			sf::Sprite yellow;
+			yellow.setTexture(Textures::sign3);
+			yellow.scale(1, 1);
+			yellow.setPosition(1088, 371);
+			window.draw(yellow);
+		}
+		if (Turn == 3)
+		{
+			sf::Sprite Blue;
+			Blue.setTexture(Textures::sign5);
+			Blue.scale(1, 1);
+			Blue.setPosition(1088, 371);
+			window.draw(Blue);
+		}
+
+		if (brestart == true)
+		{
+			sf::Text line;
+			line.setFont(Textures::name);
+			line.setString("Do you want to restart?");
+			line.setCharacterSize(28);
+			line.setPosition(540, 330);
+			line.setFillColor(sf::Color::Red);
+
+			sf::Text uper;
+			uper.setFont(Textures::name);
+			uper.setString("Restart");
+			uper.setCharacterSize(36);
+			uper.setPosition(630, 213);
+			sf::Sprite b;
+
+			b.setPosition(450, 100);
+			b.setTexture(Textures::b2);
+			window.draw(b);
+			window.draw(uper);
+			window.draw(line);
+			window.draw(yes);
+			window.draw(no);
+		}
+		if (bexit == true)
+		{
+			sf::Text line;
+			line.setFont(Textures::name);
+			line.setString("Do you want to exit?");
+			line.setCharacterSize(28);
+			line.setPosition(555, 330);
+			line.setFillColor(sf::Color::Red);
+
+			sf::Text uper;
+			uper.setFont(Textures::name);
+			uper.setString("Exit");
+			uper.setCharacterSize(36);
+			uper.setPosition(655, 213);
+			sf::Sprite b;
+
+			b.setPosition(450, 100);
+			b.setTexture(Textures::b2);
+
+			window.draw(b);
+			window.draw(uper);
+			window.draw(line);
+			window.draw(yes);
+			window.draw(no);
+		}
+
+		window.draw(exit);
+		window.draw(restart);
+		window.display();
+		if (do_animation == false)
+		{
+			if (agli_bari == true)
+			{
+				Sleep(110000);
+				agli_bari = false;
+				diceValue.clear();
+			}
+			if (clear_array == true)
+			{
+				Sleep(110000);
+				clear_array = false;
+			}
+		}
+	}
+
+
+	int*** nameArray = new int** [4];
+	for (int i = 0; i < 4; i++)
+	{
+		nameArray[i] = new int* [3];
+		for (int j = 0; j < 3; j++)
+		{
+			nameArray[i][j] = new int[2];
+		}
+	}
+
+	nameArray[0][0][0] = 600;
+	nameArray[0][0][1] = 385;
+	nameArray[0][1][0] = 600;
+	nameArray[0][1][1] = 485;
+	nameArray[0][2][0] = 600;
+	nameArray[0][2][1] = 585;
+
+
+	nameArray[1][0][0] = 560;
+	nameArray[1][0][1] = 385;
+	nameArray[1][1][0] = 560;
+	nameArray[1][1][1] = 485;
+	nameArray[1][2][0] = 560;
+	nameArray[1][2][1] = 585;
+
+
+	nameArray[2][0][0] = 560;
+	nameArray[2][0][1] = 385;
+	nameArray[2][1][0] = 560;
+	nameArray[2][1][1] = 485;
+	nameArray[2][2][0] = 560;
+	nameArray[2][2][1] = 585;
+
+	nameArray[3][0][0] = 600;
+	nameArray[3][0][1] = 385;
+	nameArray[3][1][0] = 600;
+	nameArray[3][1][1] = 485;
+	nameArray[3][2][0] = 600;
+	nameArray[3][2][1] = 585;
+
+
+	sf::Sprite winboard;
+	winboard.setTexture(Textures::win);
+
+	sf::Text name;
+	name.setFont(Textures::name);
+	name.setCharacterSize(48);
+
+
+	sf::Text name1;
+	name1.setFont(Textures::name);
+	name1.setCharacterSize(48);
+
+	sf::Text name2;
+	name2.setFont(Textures::name);
+	name2.setCharacterSize(48);
+
+	vector<string> names = { "Red","Green","Yellow","Blue" };
+
+	for (int i = 0; i < 3; i++)
+	{
+		int tempx = 0;
+		int tempy = 0;
+		int n = winStands[i];
+		tempx = nameArray[n][i][0];
+		tempy = nameArray[n][i][1];
+
+		if (i == 0)
+		{
+			name.setString(names[n]);
+			name.setPosition(tempx, tempy);
+		}
+		else if (i == 1)
+		{
+			name1.setString(names[n]);
+			name1.setPosition(tempx, tempy);
+		}
+		if (i == 2)
+		{
+			name2.setString(names[n]);
+			name2.setPosition(tempx, tempy);
+		}
+
+	}
+
+	Sleep(100);
+	win.play();
+
+
+	while (window.isOpen())
+	{
+
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::Closed:
+				window.close();
+
+			}
+
+		}
+		window.clear();
+		window.draw(winboard);
+		window.draw(name);
+		window.draw(name1);
+		window.draw(name2);
+		window.display();
+	}
+	return 0;
 }

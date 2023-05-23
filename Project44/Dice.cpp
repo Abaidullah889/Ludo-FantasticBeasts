@@ -1,4 +1,3 @@
-#pragma once
 #include "Dice.h"
 #include<cstdlib>
 
@@ -73,6 +72,10 @@ void Dice::Draw(sf::RenderWindow& w, vector<int>dice_value)
 
 		}
 	}
+
+
+
+
 
 }
 void Dice::rollDice()

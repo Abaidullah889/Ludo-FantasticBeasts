@@ -12,12 +12,16 @@ class Piece
 	bool atHome;
 	sf::Color Color;
 public:
-
+	int pos;
+	int jotawith;
+	bool isinJota;
+	bool homegali;
 	sf::CircleShape Goti;
 
 
 	Piece();
 	Piece(sf::Color, int goti_num, int Player_num, int x, int y);
+	Piece(const Piece&);
 	void setatHome(bool ah);
 	bool getatHome();
 	void setisPassed(bool ah);
